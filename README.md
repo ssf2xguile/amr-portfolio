@@ -1,38 +1,65 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# ツール・ライブラリの名前
 
-## Getting Started
+A.M.Rのポートフォリオサイト
 
-First, run the development server:
+## 簡単な説明
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+エンジニアとして就職活動する際に、これまでの実績をポートフォリオをとして示す必要がある。そのためこのポートフォリオでは作成したアプリ、個人的な制作物を載せる。
+
+***デモ***
+
+![デモ](https://image-url.gif)
+
+## 機能
+
+- 機能1（UI/計算 etc ...）
+- 機能2
+- 機能3
+- ...
+
+他の機能はこちらを参照して下さい。`awesome-tool --help`.
+
+## 必要要件
+
+- 要件
+- 要件
+- 要件
+- ...
+
+## インストール
+
+```
+$ git clone https://github.com/ssf2xguile/amr-portfolio
+$ cd amr-portfolio
+$ npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 使い方
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+1. 使い方
+2. 使い方
+3. 使い方
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+## テスト
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+1. 使い方
+2. 使い方
+3. 使い方
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## デプロイ
 
-## Learn More
+1. デプロイ
+2. デプロイ
+3. デプロイ
 
-To learn more about Next.js, take a look at the following resources:
+## その他
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+その他その他その他その他
+その他その他その他その他
+その他その他その他その他
+その他その他その他その他
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## 作者
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+[@ssf2xguile](https://twitter.com/ssfx2guile)
+mail to: xxxx@mail.com
