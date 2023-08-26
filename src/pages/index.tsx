@@ -34,13 +34,16 @@ const Home: NextPage<Props> = ({ contentsMain, contentsWork }) => {
   return (
     <>
       <Box display="flex" flexDirection="column" minHeight="100vh">
-        <Header isMobile={isMobile}/>
+        <Header isMobile={isMobile} />
         <Container as="main" maxW="container.lg">
+          <Heading as="h3" fontSize="2xl" my={5}>
+            Home
+          </Heading>
           <MainCard contents={contentsMain} />
           <Heading as="h3" fontSize="2xl" my={5}>
             Latest Portfolio
           </Heading>
-          <WorkThumbnail contents={contentsWork} isMobile={isMobile}/>
+          <WorkThumbnail contents={contentsWork} isMobile={isMobile} />
         </Container>
         <Footer />
       </Box>
