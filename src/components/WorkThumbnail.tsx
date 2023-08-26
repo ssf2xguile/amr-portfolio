@@ -4,7 +4,6 @@ import {
   Box,
   Image,
   Grid,
-  useBreakpointValue,
   Card,
   CardBody,
   AspectRatio,
@@ -16,8 +15,11 @@ type Props = {
   contents: WorkImage[];
 };
 
-const WorkThumbnail: FC<Props> = ({ contents }) => {
-  const isMobile = useBreakpointValue({ base: true, lg: false });
+interface WorkThumbnailProps {
+  isMobile: boolean | undefined;
+}
+
+const WorkThumbnail: FC<Props & WorkThumbnailProps> = ({ contents, isMobile }) => {
 
   return (
     <>

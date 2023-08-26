@@ -7,20 +7,26 @@ import {
   useColorMode,
   useColorModeValue,
   Button,
-  IconButton,
-  Collapse,
+  Drawer,
+  DrawerBody,
+  DrawerHeader,
+  DrawerOverlay,
+  DrawerContent,
+  DrawerCloseButton,
+  useDisclosure,
 } from '@chakra-ui/react';
 import { MoonIcon, SunIcon, HamburgerIcon } from '@chakra-ui/icons';
-import { FC, useState } from 'react';
+import { FC, useRef } from 'react';
 import NextLink from 'next/link';
 
-const Header: FC = () => {
-  const { colorMode, toggleColorMode } = useColorMode();
-  const [isOpen, setIsOpen] = useState(false);
+interface Props {
+  isMobile: boolean | undefined;
+};
 
-  const handleToggle = () => {
-    setIsOpen(!isOpen);
-  };
+const Header: FC<Props> = ({ isMobile }) => {
+  const { colorMode, toggleColorMode } = useColorMode();
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const btnRef = useRef<HTMLButtonElement>(null);
 
   return (
     <Box bg={useColorModeValue('gray.100', 'gray.900')} px={4}>
@@ -42,65 +48,84 @@ const Header: FC = () => {
             </Heading>
           </NextLink>
           <Flex alignItems="center">
-            <Flex
-              display={{ base: 'none', md: 'flex' }}
-              justifyContent="flex-end"
-              alignItems="center"
-            >
-              <NextLink href="/about">
-                <Heading fontSize="xl" cursor="pointer" mr="4">
-                  about
-                </Heading>
-              </NextLink>
-              <NextLink href="/work">
-                <Heading fontSize="xl" cursor="pointer" mr="4">
-                  work
-                </Heading>
-              </NextLink>
-              <NextLink href="/contact">
-                <Heading fontSize="xl" cursor="pointer" mr="4">
-                  contact
-                </Heading>
-              </NextLink>
-              <Button size="lg" onClick={toggleColorMode}>
-                {colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
-              </Button>
-            </Flex>
-            <IconButton
-              aria-label="Toggle Menu"
-              icon={<HamburgerIcon />}
-              display={{ base: 'block', md: 'none' }}
-              onClick={handleToggle}
-            />
+            {isMobile ? (
+              <>
+                <Button ref={btnRef} onClick={onOpen}>
+                  <HamburgerIcon />
+                </Button>
+                <Drawer
+                  isOpen={isOpen}
+                  placement="right"
+                  onClose={onClose}
+                  finalFocusRef={btnRef}
+                >
+                  <DrawerOverlay />
+                  <DrawerContent>
+                    <DrawerCloseButton />
+                    <DrawerHeader>Menu</DrawerHeader>
+                    <DrawerBody>
+                      <NextLink href="/">
+                        <Heading fontSize="xl" cursor="pointer" mb="4">
+                          Home
+                        </Heading>
+                      </NextLink>
+                      <NextLink href="/about">
+                        <Heading fontSize="xl" cursor="pointer" mb="4">
+                          About
+                        </Heading>
+                      </NextLink>
+                      <NextLink href="/work">
+                        <Heading fontSize="xl" cursor="pointer" mb="4">
+                          Works
+                        </Heading>
+                      </NextLink>
+                      <NextLink href="/contact">
+                        <Heading fontSize="xl" cursor="pointer" mb="4">
+                          Contact
+                        </Heading>
+                      </NextLink>
+                      <Button size="md" onClick={toggleColorMode}>
+                        {colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
+                      </Button>
+                    </DrawerBody>
+                  </DrawerContent>
+                </Drawer>
+              </>
+            ) : (
+              <>
+                <Flex
+                  display="flex"
+                  justifyContent="flex-end"
+                  alignItems="center"
+                >
+                  <NextLink href="/">
+                    <Heading fontSize="xl" cursor="pointer" mr="4">
+                      Home
+                    </Heading>
+                  </NextLink>
+                  <NextLink href="/about">
+                    <Heading fontSize="xl" cursor="pointer" mr="4">
+                      About
+                    </Heading>
+                  </NextLink>
+                  <NextLink href="/works">
+                    <Heading fontSize="xl" cursor="pointer" mr="4">
+                      Works
+                    </Heading>
+                  </NextLink>
+                  <NextLink href="/contact">
+                    <Heading fontSize="xl" cursor="pointer" mr="4">
+                      Contact
+                    </Heading>
+                  </NextLink>
+                  <Button size="md" onClick={toggleColorMode}>
+                    {colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
+                  </Button>
+                </Flex>
+              </>
+            )}
           </Flex>
         </Flex>
-        <Collapse in={isOpen} animateOpacity>
-          <Flex
-            direction="column"
-            alignItems="flex-end"
-            p="4"
-            bgColor={useColorModeValue('gray.100', 'gray.900')}
-          >
-            <NextLink href="/about">
-              <Text fontSize="xl" cursor="pointer" mb="2">
-                about
-              </Text>
-            </NextLink>
-            <NextLink href="/work">
-              <Text fontSize="xl" cursor="pointer" mb="2">
-                work
-              </Text>
-            </NextLink>
-            <NextLink href="/contact">
-              <Text fontSize="xl" cursor="pointer" mb="2">
-                contact
-              </Text>
-            </NextLink>
-            <Button size="lg" onClick={toggleColorMode}>
-              {colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
-            </Button>
-          </Flex>
-        </Collapse>
       </Container>
     </Box>
   );

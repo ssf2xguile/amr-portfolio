@@ -9,7 +9,7 @@ type Props = {
 const MainCard: FC<Props> = ({ contents }) => {
   return (
     <Card my={6}>
-      <CardBody position="relative">
+      <CardBody position="relative" p={3}>
         <Image
           src={contents[0].mainImage.url} // ここを修正
           alt="main image"
