@@ -12,10 +12,12 @@ import {
   CardHeader,
   CardBody,
   Image,
+  VStack,
   Center, // Centerコンポーネントのインポートを追加
 } from '@chakra-ui/react';
+import { StarIcon } from '@chakra-ui/icons';
 
-const Home: NextPage = () => {
+const About: NextPage = () => {
   const isMobile = useBreakpointValue({ base: true, md: false });
 
   return (
@@ -28,7 +30,7 @@ const Home: NextPage = () => {
           </Heading>
           <Center>
             <Card maxW="md" direction="column" mb={4}>
-              <CardHeader mx="auto">
+              <CardHeader mx='auto'>
                 <Image
                   src="/images/ガイルicon.jpg"
                   alt="プロフィール画像"
@@ -37,16 +39,18 @@ const Home: NextPage = () => {
                   boxSize="150px"
                 />
               </CardHeader>
-              <CardBody textAlign="center">
-                <Heading as="h4" fontSize="xl">
-                  A.M.R
-                </Heading>
-                <Text>情報系の大学生</Text>
-                <Text>
-                  就職のためにポートフォリオ制作中。
-                  受験期にハイスコアガールの影響でスト2にハマり、以来暇さえあれば遊んでいる。
-                  持ちキャラは"ガイル"。
-                </Text>
+              <CardBody>
+                <VStack>
+                  <Heading as="h4" fontSize="xl">
+                    A.M.R
+                  </Heading>
+                  <Text>情報系の大学生</Text>
+                  <Text>
+                    就職のためにポートフォリオ制作中。
+                    受験期にハイスコアガールの影響でスト2にハマり、以来暇さえあれば遊んでいる。
+                    持ちキャラは"ガイル"。
+                  </Text>
+                </VStack>
               </CardBody>
             </Card>
           </Center>
@@ -79,6 +83,16 @@ const Home: NextPage = () => {
           <Text py={2}>2020年4月 - 2023年9月</Text>
           <Divider my={4} />
           <Heading as="h4">Skills</Heading>
+          <Box mb={6}>
+            <Text fontSize="2xl" py={2}>
+              Affter Effects - 中級者
+            </Text>
+            {Array(5)
+              .fill('')
+              .map((_, i) => (
+                <StarIcon key={i} color={i < 3 ? 'orange.300' : 'gray.300'} />
+              ))}
+          </Box>
         </Container>
         <Footer />
       </Box>
@@ -86,4 +100,4 @@ const Home: NextPage = () => {
   );
 };
 
-export default Home;
+export default About;

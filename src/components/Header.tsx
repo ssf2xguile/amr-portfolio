@@ -47,7 +47,7 @@ const Header: FC<Props> = ({ isMobile }) => {
               A.M.R
             </Heading>
           </NextLink>
-          <Flex alignItems="center">
+          <Flex >
             {isMobile ? (
               <>
                 <Button ref={btnRef} onClick={onOpen}>
@@ -74,7 +74,7 @@ const Header: FC<Props> = ({ isMobile }) => {
                           About
                         </Heading>
                       </NextLink>
-                      <NextLink href="/work">
+                      <NextLink href="/works">
                         <Heading fontSize="xl" cursor="pointer" mb="4">
                           Works
                         </Heading>
