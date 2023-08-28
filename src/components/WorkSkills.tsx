@@ -29,7 +29,7 @@ const WorkSkills: FC<Props> = ({ contentWork }) => {
         align="stretch"
       >
         <Stack direction="row" alignItems="center">
-          <SkillIcon boxSize={6} />
+          <SkillIcon w={6} h={6} />
           <Heading as="h5" fontSize="xl">
             Skills:{' '}
           </Heading>
@@ -40,7 +40,7 @@ const WorkSkills: FC<Props> = ({ contentWork }) => {
           </Text>
         </Stack>
         <Stack direction="row">
-          <GithubIcon boxSize={6} />
+          <GithubIcon w={6} h={6} />
           <Heading as="h5" fontSize="xl">
             Github:{' '}
           </Heading>
@@ -51,7 +51,7 @@ const WorkSkills: FC<Props> = ({ contentWork }) => {
           </Text>
         </Stack>
         <Stack direction="row">
-          <CalendarIcon boxSize={6} />
+          <CalendarIcon w={6} h={6} />
           <Heading as="h5" fontSize="xl">
             Created At:{' '}
           </Heading>

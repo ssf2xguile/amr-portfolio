@@ -1,4 +1,5 @@
 import { NextPage } from 'next';
+import { MetaHead } from '@/components/MetaHead';
 import Header from '@/components/Header';
 import MainCard from '@/components/MainCard';
 import WorkThumbnail from '@/components/WorkThumbnail';
@@ -33,6 +34,7 @@ const Home: NextPage<Props> = ({ contentsMain, contentsWork }) => {
 
   return (
     <>
+      <MetaHead />
       <Box display="flex" flexDirection="column" minHeight="100vh">
         <Header isMobile={isMobile} />
         <Container as="main" maxW="container.lg">

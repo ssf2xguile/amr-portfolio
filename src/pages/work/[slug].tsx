@@ -1,4 +1,5 @@
 import { NextPage } from 'next';
+import { MetaHead } from '@/components/MetaHead';
 import Header from '@/components/Header';
 import { WorkImage } from '@/types/portfolio';
 import WorkSkills from '@/components/WorkSkills';
@@ -26,6 +27,7 @@ const Work: NextPage<Props> = ({ contentWork }) => {
 
   return (
     <>
+      <MetaHead title={`${contentWork.title} | A.M.R Portfolio`} description={contentWork.description} />
       <Box display="flex" flexDirection="column" minHeight="100vh">
         <Header isMobile={isMobile} />
         <Container as="main" maxW="container.lg">
