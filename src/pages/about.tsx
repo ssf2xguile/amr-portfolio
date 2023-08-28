@@ -53,7 +53,7 @@ const About: NextPage = () => {
                   <Text>
                     就職のためにポートフォリオ制作中。
                     受験期にハイスコアガールの影響でスト2にハマり、以来暇さえあれば遊んでいる。
-                    持ちキャラは"ガイル"。
+                    持ちキャラは&quot;ガイル&quot;。
                   </Text>
                   <HStack spacing={12}>
                     <Link
@@ -88,7 +88,7 @@ const About: NextPage = () => {
           <Text py={2}>2020年4月 - 2023年9月</Text>
           <Divider my={4} />
           <Heading as="h4">Skills</Heading>
-            <HavingSkills />
+          <HavingSkills />
         </Container>
         <Footer />
       </Box>

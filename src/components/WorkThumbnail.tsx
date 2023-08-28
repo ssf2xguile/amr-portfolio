@@ -19,8 +19,10 @@ interface WorkThumbnailProps {
   isMobile: boolean | undefined;
 }
 
-const WorkThumbnail: FC<Props & WorkThumbnailProps> = ({ contents, isMobile }) => {
-
+const WorkThumbnail: FC<Props & WorkThumbnailProps> = ({
+  contents,
+  isMobile,
+}) => {
   return (
     <>
       <Grid

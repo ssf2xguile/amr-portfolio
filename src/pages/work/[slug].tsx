@@ -40,8 +40,8 @@ const Work: NextPage<Props> = ({ contentWork }) => {
               mb={5}
             />
           </Link>
-            <WorkSkills contentWork={contentWork} />
-            <WorkIntroduce contentWork={contentWork} />
+          <WorkSkills contentWork={contentWork} />
+          <WorkIntroduce contentWork={contentWork} />
         </Container>
         <Footer />
       </Box>

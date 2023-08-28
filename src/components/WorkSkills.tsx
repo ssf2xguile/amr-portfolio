@@ -18,17 +18,18 @@ type Props = {
 };
 
 const WorkSkills: FC<Props> = ({ contentWork }) => {
-  
   return (
     <Box>
-      <Heading as="h3" mb={4}>INFORMATION</Heading>
+      <Heading as="h3" mb={4}>
+        INFORMATION
+      </Heading>
       <VStack
         divider={<StackDivider borderColor="gray.200" />}
         spacing={4}
         align="stretch"
       >
         <Stack direction="row" alignItems="center">
-          <SkillIcon boxSize={6}/>
+          <SkillIcon boxSize={6} />
           <Heading as="h5" fontSize="xl">
             Skills:{' '}
           </Heading>
@@ -39,7 +40,7 @@ const WorkSkills: FC<Props> = ({ contentWork }) => {
           </Text>
         </Stack>
         <Stack direction="row">
-          <GithubIcon boxSize={6}/>
+          <GithubIcon boxSize={6} />
           <Heading as="h5" fontSize="xl">
             Github:{' '}
           </Heading>
@@ -50,12 +51,12 @@ const WorkSkills: FC<Props> = ({ contentWork }) => {
           </Text>
         </Stack>
         <Stack direction="row">
-          <CalendarIcon boxSize={6}/>
+          <CalendarIcon boxSize={6} />
           <Heading as="h5" fontSize="xl">
             Created At:{' '}
           </Heading>
           <Text>
-            <Moment format='YYYY/MM/DD'>{contentWork.created_at}</Moment>
+            <Moment format="YYYY/MM/DD">{contentWork.created_at}</Moment>
           </Text>
         </Stack>
       </VStack>

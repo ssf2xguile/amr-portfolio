@@ -21,7 +21,7 @@ import NextLink from 'next/link';
 
 interface Props {
   isMobile: boolean | undefined;
-};
+}
 
 const Header: FC<Props> = ({ isMobile }) => {
   const { colorMode, toggleColorMode } = useColorMode();
@@ -47,7 +47,7 @@ const Header: FC<Props> = ({ isMobile }) => {
               A.M.R
             </Heading>
           </NextLink>
-          <Flex >
+          <Flex>
             {isMobile ? (
               <>
                 <Button ref={btnRef} onClick={onOpen}>

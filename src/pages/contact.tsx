@@ -15,7 +15,7 @@ const Contact: NextPage = () => {
           <Heading as="h3" fontSize="2xl" my={5}>
             Contact
           </Heading>
-            <ContactForm />
+          <ContactForm />
         </Container>
         <Footer />
       </Box>

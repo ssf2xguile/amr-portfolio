@@ -15,7 +15,11 @@ import { FC } from 'react';
 const HavingSkills: FC = () => {
   return (
     <TableContainer>
-      <Table variant="simple" my={6} __css={{'table-layout': 'fixed', width: 'full'}}>
+      <Table
+        variant="simple"
+        my={6}
+        __css={{ 'table-layout': 'fixed', width: 'full' }}
+      >
         <TableCaption>個人開発およびチーム開発で使用する技術</TableCaption>
         <Thead>
           <Tr>
@@ -83,7 +87,11 @@ const HavingSkills: FC = () => {
         </Tbody>
       </Table>
 
-      <Table variant="simple" my={6} __css={{'table-layout': 'fixed', width: 'full'}}>
+      <Table
+        variant="simple"
+        my={6}
+        __css={{ 'table-layout': 'fixed', width: 'full' }}
+      >
         <TableCaption>その他技術</TableCaption>
         <Thead>
           <Tr>
