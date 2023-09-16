@@ -20,6 +20,7 @@ import {
 } from '@chakra-ui/react';
 import Career from '@/components/Career';
 import Education from '@/components/Education';
+import Qualification from '@/components/Qualification';
 import HavingSkills from '@/components/HavingSkills';
 import { GithubIcon } from '@/components/GithubIcon';
 import { YouTubeIcon } from '@/components/YouTubeIcon';
@@ -78,11 +79,11 @@ const Profile: NextPage = () => {
             </Card>
           </Center>
           <VStack spacing='8'>
-          <Career />
-          <Education />
-          <HavingSkills />
+            <Career />
+            <Education />
+            <Qualification />
+            <HavingSkills />
           </VStack>
-          
         </Container>
         <Footer />
       </Box>
