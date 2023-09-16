@@ -7,7 +7,7 @@ import {
   useColorModeValue,
 } from '@chakra-ui/react';
 
-export const Footer: FC = () => {
+const Footer: FC = () => {
   return (
     <Box
       bg={useColorModeValue('gray.100', 'gray.900')}
@@ -26,3 +26,5 @@ export const Footer: FC = () => {
     </Box>
   );
 };
+
+export default Footer;

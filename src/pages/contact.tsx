@@ -1,8 +1,8 @@
 import { NextPage } from 'next';
-import { MetaHead } from '@/components/MetaHead';
+import MetaHead from '@/components/MetaHead';
 import Header from '@/components/Header';
 import ContactForm from '@/components/ContactForm';
-import { Footer } from '@/components/Footer';
+import Footer from '@/components/Footer';
 import { Box, Container, Heading, useBreakpointValue } from '@chakra-ui/react';
 
 const Contact: NextPage = () => {
@@ -10,7 +10,7 @@ const Contact: NextPage = () => {
 
   return (
     <>
-      <MetaHead />
+      <MetaHead title="Contact | A.M.R Portfolio" />
       <Box display="flex" flexDirection="column" minHeight="100vh">
         <Header isMobile={isMobile} />
         <Container as="main" maxW="container.lg">

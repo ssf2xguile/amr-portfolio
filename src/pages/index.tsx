@@ -1,9 +1,9 @@
 import { NextPage } from 'next';
-import { MetaHead } from '@/components/MetaHead';
+import MetaHead from '@/components/MetaHead';
 import Header from '@/components/Header';
 import MainCard from '@/components/MainCard';
 import WorkThumbnail from '@/components/WorkThumbnail';
-import { Footer } from '@/components/Footer';
+import Footer from '@/components/Footer';
 import { Box, Container, Heading, useBreakpointValue } from '@chakra-ui/react';
 import { MainImage, WorkImage } from '@/types/portfolio';
 import { LATEST_WORK_PER_PAGE } from '@/settings/siteSettings';

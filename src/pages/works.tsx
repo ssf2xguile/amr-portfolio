@@ -1,8 +1,8 @@
 import { NextPage } from 'next';
-import { MetaHead } from '@/components/MetaHead';
+import MetaHead from '@/components/MetaHead';
 import Header from '@/components/Header';
 import { WorkImage } from '@/types/portfolio';
-import { Footer } from '@/components/Footer';
+import Footer from '@/components/Footer';
 import WorkThumbnail from '@/components/WorkThumbnail';
 import { Box, Container, Heading, useBreakpointValue } from '@chakra-ui/react';
 
@@ -28,7 +28,7 @@ const Works: NextPage<Props> = ({ contentsWork }) => {
 
   return (
     <>
-      <MetaHead />
+      <MetaHead title="Works | A.M.R Portfolio" />
       <Box display="flex" flexDirection="column" minHeight="100vh">
         <Header isMobile={isMobile} />
         <Container as="main" maxW="container.lg">

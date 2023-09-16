@@ -69,9 +69,9 @@ const Header: FC<Props> = ({ isMobile }) => {
                           Home
                         </Heading>
                       </NextLink>
-                      <NextLink href="/about">
+                      <NextLink href="/profile">
                         <Heading fontSize="xl" cursor="pointer" mb="4">
-                          About
+                          Profile
                         </Heading>
                       </NextLink>
                       <NextLink href="/works">
@@ -103,9 +103,9 @@ const Header: FC<Props> = ({ isMobile }) => {
                       Home
                     </Heading>
                   </NextLink>
-                  <NextLink href="/about">
+                  <NextLink href="/profile">
                     <Heading fontSize="xl" cursor="pointer" mr="4">
-                      About
+                    Profile
                     </Heading>
                   </NextLink>
                   <NextLink href="/works">
