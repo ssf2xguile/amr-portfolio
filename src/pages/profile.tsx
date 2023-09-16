@@ -18,6 +18,8 @@ import {
   Center,
   HStack, // Centerコンポーネントのインポートを追加
 } from '@chakra-ui/react';
+import Career from '@/components/Career';
+import Education from '@/components/Education';
 import HavingSkills from '@/components/HavingSkills';
 import { GithubIcon } from '@/components/GithubIcon';
 import { YouTubeIcon } from '@/components/YouTubeIcon';
@@ -75,22 +77,12 @@ const Profile: NextPage = () => {
               </CardBody>
             </Card>
           </Center>
-          <Heading as="h4">Experience</Heading>
-          <Text fontSize="2xl" py={2}>
-            Pythonエンジニア - 合同会社カフェラテ
-          </Text>
-          <Text py={2}>未経験ながらアルバイト採用していただいている。</Text>
-          <Text py={2}>2021年12月 - 2023年4月</Text>
-          <Divider my={4} />
-          <Heading as="h4">Education</Heading>
-          <Text fontSize="2xl" py={2}>
-            筑波大学 情報学群 情報科学類
-          </Text>
-          <Text py={2}>茨城県つくば市天王台１丁目1ｰ1</Text>
-          <Text py={2}>2020年4月 - 2023年9月</Text>
-          <Divider my={4} />
-          <Heading as="h4">Skills</Heading>
+          <VStack spacing='8'>
+          <Career />
+          <Education />
           <HavingSkills />
+          </VStack>
+          
         </Container>
         <Footer />
       </Box>
