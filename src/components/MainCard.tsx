@@ -1,4 +1,4 @@
-import { Card, CardBody, Image, Box, Text } from '@chakra-ui/react';
+import { Card, CardBody, Image, Box, Text, useColorModeValue } from '@chakra-ui/react';
 import { FC } from 'react';
 import { MainImage } from '@/types/portfolio';
 
@@ -15,7 +15,7 @@ const MainCard: FC<Props> = ({ contents }) => {
           alt="main image"
           borderRadius="lg"
         />
-        <Box position="absolute" bottom="20px" left="20px">
+        <Box position="absolute" bottom="20px" left="20px" color={useColorModeValue('white', 'black')} >
           <Text fontSize="xl">A.M.R portfolio</Text>
           <Text>created by Next.js 12 & Chakra UI</Text>
         </Box>

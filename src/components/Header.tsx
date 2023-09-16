@@ -29,7 +29,7 @@ const Header: FC<Props> = ({ isMobile }) => {
   const btnRef = useRef<HTMLButtonElement>(null);
 
   return (
-    <Box bg={useColorModeValue('gray.100', 'gray.900')} px={4}>
+    <Box bg={useColorModeValue('gray.100', 'gray.900')}>
       <Container maxW="container.lg">
         <Flex
           as="header"
@@ -47,84 +47,82 @@ const Header: FC<Props> = ({ isMobile }) => {
               A.M.R
             </Heading>
           </NextLink>
-          <Flex>
-            {isMobile ? (
-              <>
-                <Button ref={btnRef} onClick={onOpen}>
-                  <HamburgerIcon />
-                </Button>
-                <Drawer
-                  isOpen={isOpen}
-                  placement="right"
-                  onClose={onClose}
-                  finalFocusRef={btnRef}
-                >
-                  <DrawerOverlay />
-                  <DrawerContent>
-                    <DrawerCloseButton />
-                    <DrawerHeader>Menu</DrawerHeader>
-                    <DrawerBody>
-                      <NextLink href="/">
-                        <Heading fontSize="xl" cursor="pointer" mb="4">
-                          Home
-                        </Heading>
-                      </NextLink>
-                      <NextLink href="/profile">
-                        <Heading fontSize="xl" cursor="pointer" mb="4">
-                          Profile
-                        </Heading>
-                      </NextLink>
-                      <NextLink href="/works">
-                        <Heading fontSize="xl" cursor="pointer" mb="4">
-                          Works
-                        </Heading>
-                      </NextLink>
-                      <NextLink href="/contact">
-                        <Heading fontSize="xl" cursor="pointer" mb="4">
-                          Contact
-                        </Heading>
-                      </NextLink>
-                      <Button size="md" onClick={toggleColorMode}>
-                        {colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
-                      </Button>
-                    </DrawerBody>
-                  </DrawerContent>
-                </Drawer>
-              </>
-            ) : (
-              <>
-                <Flex
-                  display="flex"
-                  justifyContent="flex-end"
-                  alignItems="center"
-                >
-                  <NextLink href="/">
-                    <Heading fontSize="xl" cursor="pointer" mr="4">
-                      Home
-                    </Heading>
-                  </NextLink>
-                  <NextLink href="/profile">
-                    <Heading fontSize="xl" cursor="pointer" mr="4">
+          {isMobile ? (
+            <>
+              <Button ref={btnRef} onClick={onOpen}>
+                <HamburgerIcon />
+              </Button>
+              <Drawer
+                isOpen={isOpen}
+                placement="right"
+                onClose={onClose}
+                finalFocusRef={btnRef}
+              >
+                <DrawerOverlay />
+                <DrawerContent>
+                  <DrawerCloseButton />
+                  <DrawerHeader>Menu</DrawerHeader>
+                  <DrawerBody>
+                    <NextLink href="/">
+                      <Heading fontSize="xl" cursor="pointer" mb="4">
+                        Home
+                      </Heading>
+                    </NextLink>
+                    <NextLink href="/profile">
+                      <Heading fontSize="xl" cursor="pointer" mb="4">
+                        Profile
+                      </Heading>
+                    </NextLink>
+                    <NextLink href="/works">
+                      <Heading fontSize="xl" cursor="pointer" mb="4">
+                        Works
+                      </Heading>
+                    </NextLink>
+                    <NextLink href="/contact">
+                      <Heading fontSize="xl" cursor="pointer" mb="4">
+                        Contact
+                      </Heading>
+                    </NextLink>
+                    <Button size="md" onClick={toggleColorMode}>
+                      {colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
+                    </Button>
+                  </DrawerBody>
+                </DrawerContent>
+              </Drawer>
+            </>
+          ) : (
+            <>
+              <Flex
+                display="flex"
+                justifyContent="flex-end"
+                alignItems="center"
+              >
+                <NextLink href="/">
+                  <Heading fontSize="xl" cursor="pointer" mr="4">
+                    Home
+                  </Heading>
+                </NextLink>
+                <NextLink href="/profile">
+                  <Heading fontSize="xl" cursor="pointer" mr="4">
                     Profile
-                    </Heading>
-                  </NextLink>
-                  <NextLink href="/works">
-                    <Heading fontSize="xl" cursor="pointer" mr="4">
-                      Works
-                    </Heading>
-                  </NextLink>
-                  <NextLink href="/contact">
-                    <Heading fontSize="xl" cursor="pointer" mr="4">
-                      Contact
-                    </Heading>
-                  </NextLink>
-                  <Button size="md" onClick={toggleColorMode}>
-                    {colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
-                  </Button>
-                </Flex>
-              </>
-            )}
-          </Flex>
+                  </Heading>
+                </NextLink>
+                <NextLink href="/works">
+                  <Heading fontSize="xl" cursor="pointer" mr="4">
+                    Works
+                  </Heading>
+                </NextLink>
+                <NextLink href="/contact">
+                  <Heading fontSize="xl" cursor="pointer" mr="4">
+                    Contact
+                  </Heading>
+                </NextLink>
+                <Button size="md" onClick={toggleColorMode}>
+                  {colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
+                </Button>
+              </Flex>
+            </>
+          )}
         </Flex>
       </Container>
     </Box>
