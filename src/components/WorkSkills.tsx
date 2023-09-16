@@ -1,13 +1,6 @@
 import { FC } from 'react';
 import { WorkImage } from '@/types/portfolio';
-import {
-  Box,
-  Stack,
-  VStack,
-  StackDivider,
-  Heading,
-  Text,
-} from '@chakra-ui/react';
+import { VStack, Heading, Text, Flex, Spacer, Divider } from '@chakra-ui/react';
 import { CalendarIcon } from '@chakra-ui/icons';
 import { SkillIcon } from '@/components/SkillIcon';
 import { GithubIcon } from '@/components/GithubIcon';
@@ -15,52 +8,86 @@ import Moment from 'react-moment';
 
 type Props = {
   contentWork: WorkImage;
+  isMobile: boolean | undefined;
 };
 
-const WorkSkills: FC<Props> = ({ contentWork }) => {
+const WorkSkills: FC<Props> = ({ contentWork, isMobile }) => {
   return (
-    <Box>
-      <Heading as="h3" mb={4}>
-        INFORMATION
+    <VStack align="stretch" spacing={4}>
+      {/* ここにはalign='stretch'を入れないと、子要素の幅が親要素(VStack)の幅に合わない */}
+      <Heading as="h4" fontSize="2xl">
+        Information
       </Heading>
-      <VStack
-        divider={<StackDivider borderColor="gray.200" />}
-        spacing={4}
-        align="stretch"
-      >
-        <Stack direction="row" alignItems="center">
-          <SkillIcon w={6} h={6} />
-          <Heading as="h5" fontSize="xl">
-            Skills:{' '}
-          </Heading>
-          <Text>
+      {isMobile ? (
+        <>
+          <Flex alignItems="center" gridGap={2}>
+            <SkillIcon w={6} h={6} />
+            <Heading as="h5" fontSize="xl">
+              Skills:{' '}
+            </Heading>
             {contentWork.tag.map((tag) => (
               <Text key={tag.id}>{tag.name} </Text>
             ))}
-          </Text>
-        </Stack>
-        <Stack direction="row">
-          <GithubIcon w={6} h={6} />
-          <Heading as="h5" fontSize="xl">
-            Github:{' '}
-          </Heading>
-          <Text>
+          </Flex>
+          <Divider/>
+          <Flex alignItems="center" gridGap={2}>
+            <GithubIcon w={6} h={6} />
+            <Heading as="h5" fontSize="xl">
+              Github:{' '}
+            </Heading>
             {contentWork.tag.map((tag) => (
               <Text key={tag.id}>{tag.name} </Text>
             ))}
-          </Text>
-        </Stack>
-        <Stack direction="row">
-          <CalendarIcon w={6} h={6} />
-          <Heading as="h5" fontSize="xl">
-            Created At:{' '}
-          </Heading>
-          <Text>
-            <Moment format="YYYY/MM/DD">{contentWork.created_at}</Moment>
-          </Text>
-        </Stack>
-      </VStack>
-    </Box>
+          </Flex>
+          <Divider/>
+          <Flex alignItems="center" gridGap={2}>
+            <CalendarIcon w={6} h={6} />
+            <Heading as="h5" fontSize="xl">
+              Created At:{' '}
+            </Heading>
+            <Text>
+              <Moment format="YYYY/MM/DD">{contentWork.created_at}</Moment>
+            </Text>
+          </Flex>
+          <Divider/>
+        </>
+      ) : (
+        <>
+          <Flex>
+            <Flex alignItems="center" gridGap={2}>
+              <SkillIcon w={6} h={6} />
+              <Heading as="h5" fontSize="xl">
+                Skills:{' '}
+              </Heading>
+              {contentWork.tag.map((tag) => (
+                <Text key={tag.id}>{tag.name} </Text>
+              ))}
+            </Flex>
+            <Spacer />
+            <Flex alignItems="center" gridGap={2}>
+              <GithubIcon w={6} h={6} />
+              <Heading as="h5" fontSize="xl">
+                Github:{' '}
+              </Heading>
+              {contentWork.tag.map((tag) => (
+                <Text key={tag.id}>{tag.name} </Text>
+              ))}
+            </Flex>
+            <Spacer />
+            <Flex alignItems="center" gridGap={2}>
+              <CalendarIcon w={6} h={6} />
+              <Heading as="h5" fontSize="xl">
+                Created At:{' '}
+              </Heading>
+              <Text>
+                <Moment format="YYYY/MM/DD">{contentWork.created_at}</Moment>
+              </Text>
+            </Flex>
+          </Flex>
+          <Divider />
+        </>
+      )}
+    </VStack>
   );
 };
 

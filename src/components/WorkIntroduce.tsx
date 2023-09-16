@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import { WorkImage } from '@/types/portfolio';
-import { Box, Heading, Text } from '@chakra-ui/react';
+import { Box, VStack, Heading, Text } from '@chakra-ui/react';
 
 type Props = {
   contentWork: WorkImage;
@@ -8,14 +8,12 @@ type Props = {
 
 const WorkIntroduce: FC<Props> = ({ contentWork }) => {
   return (
-    <Box>
-      <Heading as="h3" mb={4}>
-        DESCRIPTTION
+    <VStack align="stretch" spacing={4}>
+      <Heading as="h4" fontSize="2xl">
+        Description
       </Heading>
-      <Box>
-        <Text>{contentWork.description}</Text>
-      </Box>
-    </Box>
+      <Text>{contentWork.description}</Text>
+    </VStack>
   );
 };
 

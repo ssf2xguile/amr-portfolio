@@ -7,12 +7,13 @@ import {
   Td,
   TableContainer,
   Heading,
+  Box,
 } from '@chakra-ui/react';
 import { FC } from 'react';
 
 const Qualification: FC = () => {
   return (
-    <div>
+    <Box>
       <Heading as="h4" fontSize="2xl">
         Qualification
       </Heading>
@@ -48,7 +49,7 @@ const Qualification: FC = () => {
           </Tbody>
         </Table>
       </TableContainer>
-    </div>
+    </Box>
   );
 };
 

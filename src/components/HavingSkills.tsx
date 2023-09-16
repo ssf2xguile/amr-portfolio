@@ -9,13 +9,14 @@ import {
   TableCaption,
   TableContainer,
   Heading,
+  Box,
 } from '@chakra-ui/react';
 import { StarIcon } from '@chakra-ui/icons';
 import { FC } from 'react';
 
 const HavingSkills: FC = () => {
   return (
-    <div>
+    <Box>
       <Heading as="h4" fontSize="2xl">Skills</Heading>
       <TableContainer>
         <Table
@@ -192,7 +193,7 @@ const HavingSkills: FC = () => {
           </Tbody>
         </Table>
       </TableContainer>
-    </div>
+    </Box>
   );
 };
 

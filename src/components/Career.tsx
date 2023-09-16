@@ -8,12 +8,13 @@ import {
   TableContainer,
   TableCaption,
   Heading,
+  Box,
 } from '@chakra-ui/react';
 import { FC } from 'react';
 
 const Career: FC = () => {
   return (
-    <div>
+    <Box>
       <Heading as="h4" fontSize="2xl">Career</Heading>
       <TableContainer>
         <Table
@@ -48,7 +49,7 @@ const Career: FC = () => {
           </Tbody>
         </Table>
       </TableContainer>
-    </div>
+    </Box>
   );
 };
 

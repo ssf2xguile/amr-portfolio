@@ -8,6 +8,7 @@ import Footer from '@/components/Footer';
 import type { GetStaticPaths, GetStaticProps } from 'next';
 import {
   Box,
+  VStack,
   Image,
   Container,
   Heading,
@@ -26,7 +27,10 @@ const Work: NextPage<Props> = ({ contentWork }) => {
 
   return (
     <>
-      <MetaHead title={`${contentWork.title} | A.M.R Portfolio`} description={contentWork.description}/>
+      <MetaHead
+        title={`${contentWork.title} | A.M.R Portfolio`}
+        description={contentWork.description}
+      />
       <Box display="flex" flexDirection="column" minHeight="100vh">
         <Header isMobile={isMobile} />
         <Container as="main" maxW="container.lg">
@@ -41,8 +45,10 @@ const Work: NextPage<Props> = ({ contentWork }) => {
               mb={5}
             />
           </Link>
-          <WorkSkills contentWork={contentWork} />
-          <WorkIntroduce contentWork={contentWork} />
+          <VStack align="stretch" spacing={4} mb={4}>
+            <WorkSkills contentWork={contentWork} isMobile={isMobile} />
+            <WorkIntroduce contentWork={contentWork} />
+          </VStack>
         </Container>
         <Footer />
       </Box>
