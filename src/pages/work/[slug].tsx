@@ -43,6 +43,7 @@ const Work: NextPage<Props> = ({ contentWork }) => {
               alt="my work"
               width="100"
               mb={5}
+              loading='lazy'
             />
           </Link>
           <VStack align="stretch" spacing={4} mb={4}>

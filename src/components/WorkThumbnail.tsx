@@ -40,6 +40,7 @@ const WorkThumbnail: FC<Props & WorkThumbnailProps> = ({
                       alt="Image"
                       borderRadius="md"
                       objectFit="cover"
+                      loading='lazy'
                     />
                   </AspectRatio>
                 </CardBody>
