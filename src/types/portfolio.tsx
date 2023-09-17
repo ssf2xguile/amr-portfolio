@@ -15,6 +15,7 @@ export type WorkImage = {
   title: string;
   description: string;
   tag: PostTag[];
+  github_url: string;
   created_at: string;
 } & MicroCMSListContent;
 

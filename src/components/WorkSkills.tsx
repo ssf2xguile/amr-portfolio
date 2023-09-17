@@ -1,7 +1,15 @@
 import { FC } from 'react';
 import { WorkImage } from '@/types/portfolio';
-import { VStack, Heading, Text, Flex, Spacer, Divider } from '@chakra-ui/react';
-import { CalendarIcon } from '@chakra-ui/icons';
+import {
+  VStack,
+  Heading,
+  Text,
+  Flex,
+  Spacer,
+  Divider,
+  Link,
+} from '@chakra-ui/react';
+import { CalendarIcon, ExternalLinkIcon } from '@chakra-ui/icons';
 import { SkillIcon } from '@/components/SkillIcon';
 import { GithubIcon } from '@/components/GithubIcon';
 import Moment from 'react-moment';
@@ -29,17 +37,27 @@ const WorkSkills: FC<Props> = ({ contentWork, isMobile }) => {
               <Text key={tag.id}>{tag.name} </Text>
             ))}
           </Flex>
-          <Divider/>
+          <Divider />
           <Flex alignItems="center" gridGap={2}>
             <GithubIcon w={6} h={6} />
             <Heading as="h5" fontSize="xl">
               Github:{' '}
             </Heading>
-            {contentWork.tag.map((tag) => (
-              <Text key={tag.id}>{tag.name} </Text>
-            ))}
+            <Text>
+              {typeof contentWork.github_url === 'undefined' ? (
+                'None'
+              ) : (
+                <Link
+                  href={contentWork.github_url}
+                  rel="noopener noreferrer"
+                  isExternal
+                >
+                  Link <ExternalLinkIcon mx="2px" />
+                </Link>
+              )}
+            </Text>
           </Flex>
-          <Divider/>
+          <Divider />
           <Flex alignItems="center" gridGap={2}>
             <CalendarIcon w={6} h={6} />
             <Heading as="h5" fontSize="xl">
@@ -49,7 +67,7 @@ const WorkSkills: FC<Props> = ({ contentWork, isMobile }) => {
               <Moment format="YYYY/MM/DD">{contentWork.created_at}</Moment>
             </Text>
           </Flex>
-          <Divider/>
+          <Divider />
         </>
       ) : (
         <>
@@ -69,9 +87,19 @@ const WorkSkills: FC<Props> = ({ contentWork, isMobile }) => {
               <Heading as="h5" fontSize="xl">
                 Github:{' '}
               </Heading>
-              {contentWork.tag.map((tag) => (
-                <Text key={tag.id}>{tag.name} </Text>
-              ))}
+              <Text>
+                {typeof contentWork.github_url === 'undefined' ? (
+                  'None'
+                ) : (
+                  <Link
+                    href={contentWork.github_url}
+                    rel="noopener noreferrer"
+                    isExternal
+                  >
+                    Link <ExternalLinkIcon mx="2px" />
+                  </Link>
+                )}
+              </Text>
             </Flex>
             <Spacer />
             <Flex alignItems="center" gridGap={2}>
