@@ -1,4 +1,5 @@
 import { NextPage } from 'next';
+import Image from 'next/image';
 import MetaHead from '@/components/MetaHead';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -7,13 +8,11 @@ import {
   Container,
   Heading,
   Text,
-  Divider,
   useBreakpointValue,
   Link,
   Card,
   CardHeader,
   CardBody,
-  Image,
   VStack,
   Center,
   HStack, // Centerコンポーネントのインポートを追加
@@ -44,9 +43,11 @@ const Profile: NextPage = () => {
                 <Image
                   src="/images/ガイルicon.jpg"
                   alt="プロフィール画像"
-                  borderRadius="full"
+                  width='150px'
+                  height='150px'
                   objectFit="cover"
-                  boxSize="150px"
+                  style={{ borderRadius: '100%' }}
+                  quality={30}
                 />
               </CardHeader>
               <CardBody>
@@ -55,8 +56,8 @@ const Profile: NextPage = () => {
                     A.M.R
                   </Heading>
                   <Text>情報系の大学生</Text>
-                  <Text>
-                    就職のためにポートフォリオ制作中。
+                  <Text align="center">
+                    就職のためにポートフォリオ制作中。<br></br>
                     受験期にハイスコアガールの影響でスト2にハマり、以来暇さえあれば遊んでいる。
                     持ちキャラは&quot;ガイル&quot;。
                   </Text>

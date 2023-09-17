@@ -1,4 +1,5 @@
-import { Card, CardBody, Image, Box, Text, useColorModeValue } from '@chakra-ui/react';
+import Image from 'next/image';
+import { Card, CardBody, Box, Text, useColorModeValue } from '@chakra-ui/react';
 import { FC } from 'react';
 import { MainImage } from '@/types/portfolio';
 
@@ -11,10 +12,16 @@ const MainCard: FC<Props> = ({ contents }) => {
     <Card my={6}>
       <CardBody position="relative" p={3}>
         <Image
-          src={contents[0].mainImage.url} // ここを修正
+          src={contents[0].mainImage.url}
           alt="main image"
-          borderRadius="lg"
+          width={1920}
+          height={1080}
+          sizes='100vw'
+          layout='responsive'
+          objectFit='cover'
           loading='lazy'
+          quality={30}
+          style={{ borderRadius: '0.5em' }}
         />
         <Box position="absolute" bottom="20px" left="20px" color={useColorModeValue('white', 'black')} >
           <Text fontSize="xl">A.M.R portfolio</Text>

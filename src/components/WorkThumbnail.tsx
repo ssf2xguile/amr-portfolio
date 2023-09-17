@@ -1,8 +1,7 @@
 import { FC } from 'react';
-
+import Image from 'next/image';
 import {
   Box,
-  Image,
   Grid,
   Card,
   CardBody,
@@ -38,9 +37,10 @@ const WorkThumbnail: FC<Props & WorkThumbnailProps> = ({
                     <Image
                       src={content.workImage.url}
                       alt="Image"
-                      borderRadius="md"
+                      layout='fill'
                       objectFit="cover"
                       loading='lazy'
+                      quality={10}
                     />
                   </AspectRatio>
                 </CardBody>

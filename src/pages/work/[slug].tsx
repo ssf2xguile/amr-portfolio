@@ -1,4 +1,5 @@
 import { NextPage } from 'next';
+import Image from 'next/image';
 import MetaHead from '@/components/MetaHead';
 import Header from '@/components/Header';
 import { WorkImage } from '@/types/portfolio';
@@ -9,7 +10,6 @@ import type { GetStaticPaths, GetStaticProps } from 'next';
 import {
   Box,
   VStack,
-  Image,
   Container,
   Heading,
   Link,
@@ -41,9 +41,14 @@ const Work: NextPage<Props> = ({ contentWork }) => {
             <Image
               src={contentWork.workImage.url}
               alt="my work"
-              width="100"
-              mb={5}
-              loading='lazy'
+              width={16}
+              height={9}
+              sizes="100vw"
+              layout="responsive"
+              objectFit="contain"
+              loading="lazy"
+              quality={30}
+              style={{ borderRadius: '0.5em' }}
             />
           </Link>
           <VStack align="stretch" spacing={4} mb={4}>
