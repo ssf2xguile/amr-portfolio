@@ -14,7 +14,7 @@ export const getStaticProps = async () => {
   const data1 = await client.getList({ endpoint: 'main_image' });
   const data2 = await client.getList({
     endpoint: 'work_image',
-    queries: { limit: LATEST_WORK_PER_PAGE },
+    queries: { limit: LATEST_WORK_PER_PAGE, orders: '-created_at' },
   });
   return {
     props: {

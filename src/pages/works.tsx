@@ -5,12 +5,14 @@ import { WorkImage } from '@/types/portfolio';
 import Footer from '@/components/Footer';
 import WorkThumbnail from '@/components/WorkThumbnail';
 import { Box, Container, Heading, useBreakpointValue } from '@chakra-ui/react';
+import { WORK_PER_PAGE } from '@/settings/siteSettings';
 
 import { client } from '@/libs/client';
 
 export const getStaticProps = async () => {
   const data = await client.getList({
     endpoint: 'work_image',
+    queries: { limit: WORK_PER_PAGE, orders: '-created_at' },
   });
   return {
     props: {
