@@ -46,6 +46,7 @@ const Profile: NextPage = () => {
                   width='150px'
                   height='150px'
                   objectFit="cover"
+                  priority
                   style={{ borderRadius: '100%' }}
                   quality={30}
                 />
