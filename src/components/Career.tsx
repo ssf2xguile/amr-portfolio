@@ -46,6 +46,10 @@ const Career: FC = () => {
               <Td>2021/12 - 現在</Td>
               <Td>合同会社カフェラテ</Td>
             </Tr>
+            <Tr>
+              <Td>2026/04(予定) - </Td>
+              <Td>東日本電信電話株式会社</Td>
+            </Tr>
           </Tbody>
         </Table>
       </TableContainer>
